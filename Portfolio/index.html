@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>portfolio- Zibuyile Sithagu</title>
+    <!-- add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      /* ensure project images display at the same size */
+      .project-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* About section background using profile image with dark overlay for readable text */
+      .about-bg {
+        background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('./img/profile.jpg') center/cover no-repeat;
+        color: #fff;
+      }
+      .about-bg .container { position: relative; z-index: 1; }
+      .about-bg .btn-outline-primary { color: #fff; border-color: rgba(255,255,255,0.6); }
+      .about-bg .btn-outline-primary:hover { color: #fff; border-color: #fff; }
+      .about-bg .text-body-secondary { color: rgba(255,255,255,0.9) !important; }
+
+      /* LinkedIn card */
+      .linkedin-section { padding: 1.5rem 0 2.5rem; }
+      .linkedin-card {
+        max-width: 880px;
+        margin: 0 auto;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background: #fff;
+        padding: 1rem;
+        border-radius: .5rem;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.06);
+      }
+      .linkedin-img {
+        width: 96px;
+        height: 96px;
+        border-radius: 9999px;
+        object-fit: cover;
+        flex: 0 0 96px;
+        box-shadow: 0 .25rem .5rem rgba(0,0,0,.08);
+      }
+      .linkedin-body .muted { color: #6c757d; }
+      @media (max-width: 576px) {
+        .linkedin-card { flex-direction: column; text-align: center; gap: .75rem; }
+        .linkedin-img { width: 88px; height: 88px; }
+      }
+
+      /* Contact details styling */
+      .contact-details {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Contact section styling */
+      #contact {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+      }
+      #contact .card {
+        border: 2px solid #0d6efd;
+        box-shadow: 0 8px 25px rgba(13, 110, 253, 0.08);
+        border-radius: 0.75rem;
+      }
+      .contact-item {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+      .contact-item:last-child {
+        border-bottom: none;
+      }
+      .contact-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0.375rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      .contact-item a:hover {
+        color: #fff !important;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+      }
+      .contact-item i {
+        font-size: 1.25rem;
+        width: 1.5rem;
+        text-align: center;
+      }
+
+      /* Footer navigation hover effects */
+      .nav-link {
+        transition: all 0.3s ease;
+        border-radius: 0.375rem;
+        padding: 0.5rem 0.75rem !important;
+      }
+      .nav-link:hover {
+        background-color: #0d6efd;
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+      }
+    </style>
+    <!-- removed custom CSS to restore original styling -->
+  </head>
+  <body>
+    <!-- ...existing code... -->
+            <div class="col-lg-5 text-center">
+              <div class="hero-figure bg-body-secondary rounded-4 shadow-sm mx-auto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- About -->
+      <section id="about" class="section-padding about-bg mb-5" aria-label="About">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h2 class="fw-bold mb-3">About Me</h2>
+              <p class="mb-4">Hi! I'm Zibuyile Sithagu, a passionate Full Stack Web Developer. I build beautiful, responsive web applications using modern technologies like React, Node.js, and MongoDB. I love creating digital experiences that make a real impact.</p>
+
+              <!-- Contact Details -->
+              <div class="contact-details mt-5 mx-auto d-flex flex-column align-items-center" style="max-width: 600px;">
+                <h3 class="h5 fw-bold mb-4 text-white text-center">Get In Touch</h3>
+                <div class="row g-4 justify-content-center w-100">
+                  <div class="col-md-6">
+                    <div class="contact-item d-flex flex-column align-items-center text-center">
+                      <i class="bi bi-envelope-fill mb-2 text-white-50" style="font-size: 1.5rem;"></i>
+                      <small class="text-white-50 mb-1">Email</small>
+                      <a href="mailto:princessheaven82@gmail.com" class="text-white text-decoration-none">princessheaven82@gmail.com</a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="contact-item d-flex flex-column align-items-center text-center">
+                      <i class="bi bi-telephone-fill mb-2 text-white-50" style="font-size: 1.5rem;"></i>
+                      <small class="text-white-50 mb-1">Phone</small>
+                      <a href="tel:+270749424992" class="text-white text-decoration-none">0749424992</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LinkedIn profile card (styled) -->
+      <section id="linkedin" class="linkedin-section" aria-label="LinkedIn">
+        <div class="container">
+          <div class="linkedin-card">
+            <img
+              src="./img/profile.jpg"
+              class="linkedin-img"
+              alt="Zibuyile Sithagu — profile"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://media.licdn.com/dms/image/v2/D4E03AQG4rLFUza3zAQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699457463238?e=1762992000&v=beta&t=2dFVv3bXZkIQB6OyQucFjc-SxmlP1W0G79ZjfnjneXo';console.warn('Profile image missing locally, falling back to LinkedIn');" />
+
+            <div class="linkedin-body">
+              <h3 class="h5 mb-1">Zibuyile Sithagu</h3>
+              <p class="mb-1 muted">Full Stack Web Developer</p>
+              <p class="small text-body-secondary mb-2">Building responsive web apps with React, Node.js and MongoDB. Open to collaboration and new opportunities.</p>
+              <a href="https://www.linkedin.com/in/zibuyile-sithagu-172367147" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">View LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Projects -->
+      <section id="projects" class="section-padding" aria-label="Projects">
+        <div class="container">
+          <div class="row mb-4 align-items-end">
+            <div class="col">
+              <h2 class="fw-bold mb-0">Projects</h2>
+              <p class="text-body-secondary mb-0">Selected work demonstrating range and depth.</p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <!-- Project One: stylish car (match Project Two sizing/behavior) -->
+                <img
+                  src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Promo-Meet-Model-3-Desktop.jpg"
+                  class="card-img-top project-img"
+                  alt="Tesla Model 3 promotional image — Project One"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/800x450?text=Project+1+image+missing';console.warn('Failed to load Project One image');"
+                />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Project One — Tesla Landing Page</h3>
+                  <p class="card-text text-body-secondary project-desc">📋 Description:
+A modern and responsive Tesla landing page showcasing innovative car models and clean energy vision. Built with HTML5 and CSS3 to practice front-end development concepts.
+🎯 Project Goals:
+- Build responsive landing page for all screen sizes
+- Enhance UX through smooth navigation and engaging visuals
+- Strengthen HTML and CSS skills
+🧠 Tech Stack:
+HTML5, CSS3
+🌟 Impact:
+Developed strong foundation in front-end development, responsive design, and UI layout principles.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0 pb-4 px-3">
+                  <a href="#" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                  <a href="https://github.com/Zibuyile-code" target="_blank" rel="noopener" class="btn btn-sm text-white" style="background-color: #0d6efd;">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <!-- Project Two: streaming (standardized) -->
+                <img
+                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1600&q=80"
+                  class="card-img-top project-img"
+                  alt="Streaming content on TV — Project Two"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/800x450?text=Streaming+image+missing';console.warn('Failed to load Project Two image');"
+                />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Project Two — Netflix Clone</h3>
+                  <p class="card-text text-body-secondary project-desc">📋 Description:
+A Netflix landing page clone replicating the look and feel of Netflix's official homepage. Built to strengthen front-end design skills and learn modern, responsive layouts.
+🎯 Project Goals:
+- Recreate Netflix's clean homepage using grid system
+- Build responsive design for all devices
+- Enhance CSS styling and visual hierarchy
+- Practice Bootstrap utilities for alignment
+🧠 Tech Stack:
+HTML5, CSS3
+🌟 Impact:
+Improved ability to design pixel-perfect, responsive web pages using industry-standard frameworks.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0 pb-4 px-3">
+                  <a href="#" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                  <a href="https://github.com/Zibuyile-code" target="_blank" rel="noopener" class="btn btn-sm text-white" style="background-color: #0d6efd;">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <!-- Project Three: YouTube-style (match Project Two sizing/behavior) -->
+                <img
+                  src="https://yt3.ggpht.com/XQ9wQprhDQGBssQDis-6BEFEGkY8-N2GKKNuxObSDmckg_TQsHf2okzh0YWhenfxLXroWDEGVQ=s800-c-k-c0x00ffffff-no-rj-mo"
+                  class="card-img-top project-img"
+                  alt="YouTube channel / landing image — Project Three"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/800x450?text=Project+3+image+missing';console.warn('Failed to load Project Three image');"
+                />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Project Three — YouTube Clone</h3>
+                  <p class="card-text text-body-secondary project-desc">📋 Description:
+A YouTube landing page clone replicating the platform's layout, navigation, and video display interface. Built to practice front-end development and responsive design using Bootstrap components.
+🎯 Project Goals:
+- Recreate YouTube's homepage layout with videos and navigation
+- Build fully responsive design for all devices
+- Apply CSS3 hover effects and YouTube's aesthetic
+- Strengthen Bootstrap grid and utility classes knowledge
+🧠 Tech Stack:
+HTML5, CSS3
+🌟 Impact:
+Enhanced ability to translate real-world platforms into functional, responsive web pages using Bootstrap utilities.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0 pb-4 px-3">
+                  <a href="#" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                  <a href="https://github.com/Zibuyile-code" target="_blank" rel="noopener" class="btn btn-sm text-white" style="background-color: #0d6efd;">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Four -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80"
+                  class="card-img-top project-img"
+                  alt="Developer workspace with code editor — Project Four"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/800x450?text=Project+4+image+missing';console.warn('Failed to load Project Four image');"
+                />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Project Four — Task Manager (React)</h3>
+                  <p class="card-text text-body-secondary project-desc">📋 Description:
+A responsive task manager built with React to organize work, add tasks, set priorities and deadlines. Focused on component-driven UI and state management patterns using hooks.
+🎯 Project Goals:
+- Build reusable React components and manage state efficiently.
+- Implement responsive UI with Bootstrap and accessibility considerations.
+- Persist user data via localStorage and mock APIs for testing.
+🧠 Tech Stack:
+React, HTML5, CSS3, Bootstrap, Jest for unit tests.
+🌟 Impact:
+Improved component design skills, state management, and test-driven development practices — valuable for front-end engineering roles.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0 pb-4 px-3">
+                  <a href="#" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                  <a href="https://github.com/Zibuyile-code" target="_blank" rel="noopener" class="btn btn-sm text-white" style="background-color: #0d6efd;">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Five -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80"
+                  class="card-img-top project-img"
+                  alt="E-commerce API development — Project Five"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/800x450?text=Project+5+image+missing';console.warn('Failed to load Project Five image');"
+                />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Project Five — E‑commerce API</h3>
+                  <p class="card-text text-body-secondary project-desc">📋 Description:
+A RESTful API for an e-commerce platform providing products, carts and orders endpoints. Emphasized secure routing, validation and error handling.
+🎯 Project Goals:
+- Design clear REST endpoints and handle authentication/authorization.
+- Integrate with MongoDB for product and order storage.
+- Add input validation and unit/integration tests.
+🧠 Tech Stack:
+Node.js, Express, MongoDB (Mongoose), JWT, Jest.
+🌟 Impact:
+Strengthened back-end architecture skills, API design, and database modelling — useful for full‑stack development.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0 pb-4 px-3">
+                  <a href="#" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                  <a href="https://github.com/Zibuyile-code" target="_blank" rel="noopener" class="btn btn-sm text-white" style="background-color: #0d6efd;">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Six -->
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+                  class="card-img-top project-img"
+                  alt="Design system and UI components — Project Six"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null;this.src='https://via.placeholder.com/800x450?text=Project+6+image+missing';console.warn('Failed to load Project Six image');"
+                />
+                <div class="card-body">
+                  <h3 class="h5 card-title">Project Six — Design System</h3>
+                  <p class="card-text text-body-secondary project-desc">📋 Description:
+A design system and component library created to ensure visual consistency across products. Includes tokens, reusable components and documentation.
+🎯 Project Goals:
+- Create accessible, themeable UI components.
+- Document usage and create Storybook examples.
+- Improve developer experience with clear patterns and reusable code.
+🧠 Tech Stack:
+HTML5, CSS3, Bootstrap, Storybook, Figma (design).
+🌟 Impact:
+Delivered a scalable UI toolkit that speeds development, enforces consistency and improves cross-team collaboration.</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0 pb-4 px-3">
+                  <a href="#" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                  <a href="https://github.com/Zibuyile-code" target="_blank" rel="noopener" class="btn btn-sm text-white" style="background-color: #0d6efd;">
+                    <i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section-padding bg-body mt-5" aria-label="Contact">
+        <div class="container">
+          <div class="row mb-4 align-items-end justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h2 class="fw-bold mb-0">Contact</h2>
+              <p class="text-body-secondary mb-0">Let's build something great together.</p>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <form id="contactForm" class="card shadow-sm border-0">
+                <div class="card-body p-4 p-md-5">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Emmanuel Sithagu" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="emmanuelsithagu@gmail.com" required />
+                    </div>
+                    <div class="col-12">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 px-4 px-md-5 pb-4" style="border-top: none !important;">
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-4 border-top bg-white">
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+        <p class="mb-0 small text-body-secondary">© <span id="year"></span> Zibuyile Sithagu. All rights reserved.</p>
+        <ul class="nav small">
+          <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (Bundle includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Inline app JS (small demo behavior) -->
+    <script>
+      // set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // demo contact form handler (prevent real submission)
+      var form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          // simple demo feedback
+          alert('Thank you! Your message has been received (demo).');
+          form.reset();
+        });
+      }
+
+      // debug: log and provide fallback for any broken project images
+      document.querySelectorAll('.project-img').forEach(function(img){
+        img.addEventListener('error', function(){
+          console.warn('Project image failed to load:', img.getAttribute('alt'), img.src);
+          img.src = 'https://via.placeholder.com/800x450?text=Image+missing';
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
