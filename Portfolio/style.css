@@ -18,7 +18,6 @@ html {
 }
 
 body {
-  padding-top: 4.5rem;
   background-color: #f8f9fa;
   color: var(--dark);
 }
@@ -45,34 +44,12 @@ body {
 }
 
 /* ===============================
-   HERO SECTION
-================================ */
-.hero-figure {
-  width: min(450px, 95%);
-  height: 300px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #e9ecef, #dee2e6);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* ===============================
-   NAVBAR ENHANCEMENTS
-================================ */
-.navbar .nav-link {
-  transition: var(--transition);
-}
-
-.navbar .nav-link.active {
-  font-weight: 600;
-  color: var(--primary) !important;
-}
-
-/* ===============================
    PROJECT CARDS (MAIN UPGRADE)
 ================================ */
 .card {
   border-radius: var(--card-radius);
   transition: var(--transition);
+  border: none;
 }
 
 .card:hover {
@@ -112,46 +89,144 @@ body {
 }
 
 /* ===============================
+   SKILLS SECTION
+================================ */
+#skills {
+  background-color: #f8f9fa;
+}
+
+#skills .card {
+  border: none;
+  border-radius: var(--card-radius);
+  transition: var(--transition);
+}
+
+#skills .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+#skills .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* ===============================
    LINKEDIN CARD UPGRADE
 ================================ */
 .linkedin-card {
   background: #ffffff;
   border-radius: 16px;
   transition: var(--transition);
+  border: 1px solid rgba(13, 110, 253, 0.1);
 }
 
 .linkedin-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(13, 110, 253, 0.12);
 }
 
 .linkedin-img {
-  border: 3px solid #f1f1f1;
+  border: 4px solid #0d6efd;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+}
+
+.linkedin-section {
+  padding: 2rem 0 3rem;
 }
 
 /* ===============================
    CONTACT SECTION
 ================================ */
 #contact {
-  background: linear-gradient(135deg, #f8f9fa, #eef2f7);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.03);
+}
+
+#contact h2 {
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 #contact .card {
-  border-radius: 16px;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 2px solid #0d6efd;
+  box-shadow: 0 10px 30px rgba(13, 110, 253, 0.1);
+  border-radius: 12px;
+  background: #fff;
+}
+
+#contact .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(13, 110, 253, 0.15);
+}
+
+.form-control {
+  border: 1px solid rgba(13, 110, 253, 0.2);
+  border-radius: 8px;
+  transition: var(--transition);
+  padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
 }
 
 /* ===============================
-   FOOTER LINKS
+   FOOTER
 ================================ */
-.nav-link {
-  transition: var(--transition);
+footer {
+  background: #fff;
+  border-top: 1px solid rgba(13, 110, 253, 0.1);
+  margin-top: 3rem;
 }
 
-.nav-link:hover {
-  color: var(--primary) !important;
+footer .nav-link {
+  padding: 0.25rem 0.5rem !important;
+  color: var(--muted) !important;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+footer .nav-link:hover {
+  color: #0d6efd !important;
   transform: translateY(-2px);
 }
 
+/* ===============================
+   RESPONSIVE ADJUSTMENTS
+================================ */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: 3rem;
+  }
 
+  #home {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  .project-img {
+    height: 180px;
+  }
+
+  #skills .card {
+    text-align: center;
+  }
+
+  .form-control,
+  .form-label {
+    font-size: 1rem;
+  }
+}

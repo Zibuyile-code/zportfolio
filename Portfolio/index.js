@@ -6,15 +6,18 @@
   }
 })();
 
-// Initialize ScrollSpy after content loads
-document.addEventListener('DOMContentLoaded', function () {
-  var mainNav = document.getElementById('mainNav');
-  if (mainNav && typeof bootstrap !== 'undefined') {
-    new bootstrap.ScrollSpy(document.body, {
-      target: '#mainNav',
-      offset: 80
-    });
-  }
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function (e) {
+    var href = this.getAttribute('href');
+    if (href !== '#' && document.querySelector(href)) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
 });
 
 // Minimal client-side handling for contact form
@@ -38,17 +41,45 @@ document.addEventListener('DOMContentLoaded', function () {
     form.reset();
     form.classList.remove('was-validated');
 
-    // Provide lightweight feedback
+    // Provide lightweight feedback with better UX
     var button = form.querySelector('button[type="submit"]');
     if (button) {
       var original = button.textContent;
       button.disabled = true;
-      button.textContent = 'Sent!';
+      button.classList.add('btn-success');
+      button.classList.remove('btn-primary');
+      button.textContent = '✓ Message Sent!';
+      
       setTimeout(function () {
         button.disabled = false;
+        button.classList.remove('btn-success');
+        button.classList.add('btn-primary');
         button.textContent = original;
-      }, 1500);
+      }, 2500);
     }
+    
+    // Show success alert
+    var alertDiv = document.createElement('div');
+    alertDiv.className = 'alert alert-success alert-dismissible fade show mt-3';
+    alertDiv.setAttribute('role', 'alert');
+    alertDiv.innerHTML = '<strong>Success!</strong> Thanks for reaching out. I\'ll get back to you soon. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+    form.parentElement.insertBefore(alertDiv, form.nextSibling);
+    
+    // Auto-dismiss alert after 5 seconds
+    setTimeout(function() {
+      alertDiv.remove();
+    }, 5000);
+  });
+})();
+
+// Minimal client-side handling for project images error fallback
+(function() {
+  document.querySelectorAll('.project-img').forEach(function(img) {
+    img.addEventListener('error', function() {
+      console.warn('Project image failed to load:', img.getAttribute('alt'), img.src);
+      img.src = 'https://via.placeholder.com/800x450?text=Image+unavailable';
+      img.style.backgroundColor = '#e9ecef';
+    });
   });
 })();
 
