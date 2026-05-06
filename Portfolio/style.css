@@ -1,45 +1,157 @@
-/* Base theme tokens */
+/* ===============================
+   DESIGN SYSTEM (BASE TOKENS)
+================================ */
 :root {
-  --section-padding-y: 4rem;
+  --section-padding-y: 5rem;
+  --primary: #0d6efd;
+  --dark: #111827;
+  --muted: #6c757d;
+  --card-radius: 14px;
+  --transition: all 0.25s ease;
 }
 
-/* Smooth scroll for in-page anchors */
+/* ===============================
+   GLOBAL BEHAVIOUR
+================================ */
 html {
   scroll-behavior: smooth;
 }
 
-/* Compensate for fixed navbar */
 body {
   padding-top: 4.5rem;
+  background-color: #f8f9fa;
+  color: var(--dark);
 }
 
 .section-padding {
-  padding-top: var(--section-padding-y);
-  padding-bottom: var(--section-padding-y);
+  padding: var(--section-padding-y) 0;
 }
 
-/* Hero decorative figure */
-.hero-figure {
-  width: min(420px, 90%);
-  height: 280px;
-}
-
-/* Active nav link style when using ScrollSpy */
-.navbar .nav-link.active {
-  font-weight: 600;
-}
-
-/* Focus outline enhancements for accessibility */
+/* Accessibility focus */
 :focus-visible {
-  outline: 3px solid rgba(13, 110, 253, 0.6);
-  outline-offset: 2px;
+  outline: 3px solid rgba(13, 110, 253, 0.5);
+  outline-offset: 3px;
 }
 
-/* Respect reduced motion */
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero-figure {
+  width: min(450px, 95%);
+  height: 300px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e9ecef, #dee2e6);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   NAVBAR ENHANCEMENTS
+================================ */
+.navbar .nav-link {
+  transition: var(--transition);
+}
+
+.navbar .nav-link.active {
+  font-weight: 600;
+  color: var(--primary) !important;
+}
+
+/* ===============================
+   PROJECT CARDS (MAIN UPGRADE)
+================================ */
+.card {
+  border-radius: var(--card-radius);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+.project-img {
+  height: 220px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.card:hover .project-img {
+  transform: scale(1.03);
+}
+
+/* Project text styling */
+.card-title {
+  font-weight: 600;
+}
+
+.text-body-secondary {
+  color: var(--muted) !important;
+}
+
+/* ===============================
+   PROJECT BUTTONS
+================================ */
+.btn {
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   LINKEDIN CARD UPGRADE
+================================ */
+.linkedin-card {
+  background: #ffffff;
+  border-radius: 16px;
+  transition: var(--transition);
+}
+
+.linkedin-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.linkedin-img {
+  border: 3px solid #f1f1f1;
+}
+
+/* ===============================
+   CONTACT SECTION
+================================ */
+#contact {
+  background: linear-gradient(135deg, #f8f9fa, #eef2f7);
+}
+
+#contact .card {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   FOOTER LINKS
+================================ */
+.nav-link {
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+  transform: translateY(-2px);
 }
 
 
